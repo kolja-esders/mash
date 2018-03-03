@@ -185,9 +185,9 @@ class MashPageState extends State<MashPage> {
                     ],
                   )
               ),
-              new Container(
-                  padding: new EdgeInsets.all(16.0),
-                  child: new Column(
+              new Expanded(
+                  child: new ListView(
+                    padding: new EdgeInsets.all(16.0),
                     children: <Widget>[
                       new Comment(
                           key: new Key('x'),
@@ -211,6 +211,39 @@ class MashPageState extends State<MashPage> {
                           color: Colors.redAccent
                       )
                     ],
+                  )
+              ),
+              new Container(
+                  child: new Container(
+                      color: Colors.white,
+                      alignment: Alignment.bottomCenter,
+                      child: new Row(
+                        children: <Widget>[
+                          new Container(
+                            margin: new EdgeInsets.only(
+                                left: 16.0, top: 8.0, bottom: 8.0),
+                            child: new CircleAvatar(
+                                backgroundColor: Colors.red,
+                                child: new Text('AJ')
+                            ),
+                          ),
+                          new Expanded(
+                              child: new Container(
+                                  decoration: new BoxDecoration(
+                                      color: Colors.white
+                                  ),
+                                  child: new TextField(
+                                    autocorrect: false,
+                                    decoration: new InputDecoration(
+                                      border: InputBorder.none,
+                                      hintText: 'Type something',
+                                      contentPadding: new EdgeInsets.all(16.0),
+                                    ),
+                                  )
+                              )
+                          )
+                        ],
+                      )
                   )
               )
             ]
