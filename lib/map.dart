@@ -53,8 +53,26 @@ class _MapPageState extends State<MapPage> {
                     ),
                     onTap: showMap,
                   ),
-                  new Container(
-                    child: new MediaCapture(),
+                  new Row(
+                    children: <Widget>[
+                      new Expanded(
+                        child: new ListView(
+                            padding: new EdgeInsets.all(16.0),
+                            children: <Widget>[
+                              new MediaCapture(
+                                  key: new Key('x'),
+                                  avatar: 'x',
+                                  author: 'Klaus Kleber',
+                                  likes: 10,
+                                  link: 'tba'
+                              ),
+                            ]
+
+                        ),
+
+                      ),
+                    ]
+
                   ),
 
                 ],

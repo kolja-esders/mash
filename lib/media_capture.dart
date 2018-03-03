@@ -2,6 +2,66 @@ import 'package:flutter/material.dart';
 
 
 
+
+
+class MediaCapture extends StatefulWidget {
+  MediaCapture({Key key, this.author, this.likes, this.avatar, this.link}) : super(key:key);
+  final String author;
+  final int likes;
+  final String avatar;
+  final String link;
+
+
+  @override
+  _MediaCaptureState createState() => new _MediaCaptureState();
+
+}
+
+
+
+class _MediaCaptureState extends State<MediaCapture>{
+
+  @override
+  initState() {
+    super.initState();
+
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return new Container(
+      child: new Row(
+        children: <Widget>[
+          new CircleAvatar(
+            child: new Text(widget.likes.toString()),
+          ),
+          new Text(widget.author),
+          new Text(widget.likes.toString()),
+          
+
+        ]
+      )
+    );
+        }
+ /*
+      )
+      body: new ListView.builder(
+        itemBuilder: (BuildContext context, int index) => new EntryItem(data[index]),
+        itemCount: data.length,
+      ),
+    );
+*/
+
+}
+
+
+
+
+
+
+
+
+/*
 // One entry in the multilevel list displayed by this app.
 class Entry {
   Entry(this.title, this.number_of_likes);
@@ -39,29 +99,4 @@ class EntryItem extends StatelessWidget {
     return _buildTiles(entry);
   }
 }
-
-
-class MediaCapture extends StatefulWidget {
-  @override
-  _MediaCaptureState createState() => new _MediaCaptureState();
-
-}
-
-class _MediaCaptureState extends State<MediaCapture>{
-
-  @override
-  initState() {
-    super.initState();
-
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
-        body: new ListView.builder(
-          itemBuilder: (BuildContext context, int index) => new EntryItem(data[index]),
-          itemCount: data.length,
-        ),
-    );
-  }
-}
+*/
