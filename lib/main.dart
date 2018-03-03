@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'mash_page.dart';
+
 void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
@@ -12,6 +14,30 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.deepOrange,
       ),
       home: new MyHomePage(title: 'Flutter'),
+      onGenerateRoute: (RouteSettings settings) {
+        var path = settings.name.substring(1).split('/');
+        print(path);
+
+        var arg = '';
+        if (path.length > 1) {
+          arg = path[1];
+        }
+
+        print(arg);
+
+        switch (path[0]) {
+          case '':
+            return new MaterialPageRoute(
+              builder: (_) => new MyHomePage(title: 'Flutter'),
+              settings: settings
+            );
+          case 'mash':
+            return new MaterialPageRoute(
+                builder: (_) => new MashPage(),
+              settings: settings
+            );
+        }
+      }
     );
   }
 }
@@ -85,7 +111,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: new FloatingActionButton(
-        onPressed: () => { },
+        onPressed: () => Navigator.pushNamed(context, '/mash'),
         tooltip: 'Increment',
         child: new Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
