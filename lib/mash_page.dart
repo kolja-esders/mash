@@ -66,6 +66,25 @@ class MashPageState extends State<MashPage> {
                               ),
                             ),
                           ),
+                          new Positioned(
+                            bottom: 0.0,
+                            left: 0.0,
+                            right: 0.0,
+                            child: new Container(
+                              height: 72.0,
+                              width: double.INFINITY,
+                              decoration: new BoxDecoration(
+                                gradient: new LinearGradient(
+                                  begin: Alignment.bottomCenter,
+                                  end: Alignment.topCenter,
+                                  colors: <Color>[
+                                    const Color.fromARGB(200, 0, 0, 0),
+                                    Colors.transparent
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
                           new GestureDetector(
                               onTap: _controller.value.isPlaying ? _controller
                                   .pause : _controller.play,
