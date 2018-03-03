@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:map_view/map_view.dart';
 
 
+
 import 'mash_page.dart';
+import 'media_capture.dart';
 import 'map.dart';
 
 var API_KEY = "AIzaSyD0bmHFAcM9cVUZiEPvkjgX0nzc78lKVNA";
@@ -41,7 +43,7 @@ class MyApp extends StatelessWidget {
             );
           case 'mash':
             return new MaterialPageRoute(
-                builder: (_) => new MashPage(),
+                builder: (_) => new MediaCapture(),
               settings: settings
             );
           case 'map':
