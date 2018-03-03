@@ -5,6 +5,7 @@ dependencies:
   flutter:
     sdk: flutter
   video_player: ^0.2.1
+  share: ^0.3.2
   cupertino_icons: ^0.1.0
 
 dev_dependencies:
