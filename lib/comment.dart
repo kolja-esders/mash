@@ -23,8 +23,7 @@ class CommentState extends State<Comment> {
           children: <Widget>[
             new CircleAvatar(
               backgroundColor: widget.color,
-              child: new Text(widget.author),
-              radius: 24.0
+              child: new Text(widget.author)
             ),
             new Expanded(
                 child: new Container(

@@ -99,7 +99,7 @@ class MashPageState extends State<MashPage> {
                                                 .favorite_border),
                                         color: _liked
                                             ? Colors.redAccent
-                                            : Colors.white70,
+                                            : Colors.white,
                                         splashColor: Colors.redAccent,
                                       ),
                                       new IconButton(
@@ -110,15 +110,14 @@ class MashPageState extends State<MashPage> {
                                         icon: new Icon(Icons.verified_user),
                                         color: _verified
                                             ? Colors.blueAccent
-                                            : Colors.white70,
+                                            : Colors.white,
                                         splashColor: Colors.blueAccent,
                                       ),
                                       new IconButton(
                                         onPressed: () =>
-                                            share(
-                                                'check out my website https://example.com'),
+                                            share('test'),
                                         icon: new Icon(Icons.share),
-                                        color: Colors.white70,
+                                        color: Colors.white,
                                       ),
                                     ],
                                   ),
@@ -136,6 +135,21 @@ class MashPageState extends State<MashPage> {
                                   child: new Text('JD'),
                                 ),
                               )
+                          ),
+                          new Positioned(
+                            top: -16.0,
+                            right: -16.0,
+                            child: new Material(
+                              color: Colors.transparent,
+                              child: new Container(
+                                  padding: new EdgeInsets.all(16.0),
+                                  child: new IconButton(
+                                    icon: new Icon(Icons.more_vert),
+                                    onPressed: () => {},
+                                    color: Colors.white,
+                                  )
+                              ),
+                            ),
                           )
                         ],
                       ),
