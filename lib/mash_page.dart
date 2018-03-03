@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 
+
+
+
 class MashPage extends StatelessWidget {
+
+
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -10,7 +16,10 @@ class MashPage extends StatelessWidget {
       ),
       body: new Center(
         child: new Text('ok')
+
       )
     );
   }
+
+
 }
