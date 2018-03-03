@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:map_view/map_view.dart';
+
 
 import 'mash_page.dart';
+import 'map.dart';
 
-void main() => runApp(new MyApp());
+var API_KEY = "AIzaSyD0bmHFAcM9cVUZiEPvkjgX0nzc78lKVNA";
+
+void main() {
+  MapView.setApiKey(API_KEY);
+  runApp(new MyApp());
+}
+
 
 class MyApp extends StatelessWidget {
   @override
@@ -35,6 +44,11 @@ class MyApp extends StatelessWidget {
                 builder: (_) => new MashPage(),
               settings: settings
             );
+          case 'map':
+            return new MaterialPageRoute(
+                builder: (_) => new MapPage(),
+                settings: settings
+            );
         }
       }
     );
@@ -49,6 +63,10 @@ class MyHomePage extends StatefulWidget {
   @override
   _MyHomePageState createState() => new _MyHomePageState();
 }
+
+
+
+
 
 class _MyHomePageState extends State<MyHomePage> {
 
@@ -65,6 +83,10 @@ class _MyHomePageState extends State<MyHomePage> {
             new FlatButton(
                 onPressed: () => Navigator.pushNamed(context, '/mash'),
                 child: new Text('Open mash')
+            ),
+            new FlatButton(
+                onPressed: () => Navigator.pushNamed(context, '/map'),
+                child: new Text('Open map')
             ),
           ],
         ),
