@@ -53,7 +53,7 @@ class ProfilePageState extends State<ProfilePage> {
                                   ),
                                   new CircleAvatar(
                                     backgroundImage: new AssetImage(
-                                        'images/sarah.jpg'),
+                                        'images/trixi.jpg'),
                                     radius: 72.0,
 
                                   )

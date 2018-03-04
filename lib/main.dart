@@ -60,8 +60,8 @@ class MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin {
               new camera.CameraApp(cameras: cams,),
               new overview.MyHomePage(title: "Flutter",),
               new profile.ProfilePage(
-                name: "Kolja Esder",
-                avatar: "images/sarah.jpg",
+                name: "Trixi Topmodel",
+                avatar: "images/trixi.jpg",
               ),
             ]
         )
