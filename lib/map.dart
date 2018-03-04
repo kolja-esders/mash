@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:map_view/map_view.dart';
 import 'media_capture.dart';
+import 'mash_page.dart';
 
 var API_KEY = "AIzaSyD0bmHFAcM9cVUZiEPvkjgX0nzc78lKVNA";
 
@@ -22,8 +23,8 @@ class _MapPageState extends State<MapPage> {
   @override
   initState() {
     super.initState();
-    cameraPosition = new CameraPosition(Locations.portland, 12.0);
-    staticMapUri = staticMapProvider.getStaticUri(Locations.portland, 12,
+    cameraPosition = new CameraPosition(new Location(37.370474, 128.389977), 12.0);
+    staticMapUri = staticMapProvider.getStaticUri(new Location(37.370474, 128.389977), 12,
         width: 900, height: 400);
   }
 
@@ -41,15 +42,123 @@ class _MapPageState extends State<MapPage> {
 
           children: <Widget>[
 
-            new InkWell(
-              child: new Center(
-                child: new Image.network(staticMapUri.toString()),
+            new Container(
+              child: new Stack(
+              children: <Widget>[
+                new InkWell(
+                  child: new Center(
+                    child: new Image.network(staticMapUri.toString()),
+                  ),
+                  onTap: showMap,
+                ),
+
+                new Positioned(
+                  top: 75.0,
+                  left: 0.0,
+                  right: 0.0,
+                  child: new IconButton(
+                    icon: new Icon(const IconData(0xe838, fontFamily: 'MaterialIcons')),
+                    iconSize: 32.0,
+                    color: Colors.deepOrange,
+                    splashColor: Colors.blueAccent,
+                    onPressed: () => Navigator.push(context, new MaterialPageRoute(
+                      builder: (_) => new MashPage(),
+                    ),
+                    ),
+                  ),
+                ),
+
+                new Positioned(
+                  top: 40.0,
+                  left: -150.0,
+                  right: 0.0,
+                  child: new IconButton(
+                    icon: new Icon(const IconData(0xe039, fontFamily: 'MaterialIcons')),
+                    iconSize: 24.0,
+                    color: Colors.grey,
+                    splashColor: Colors.blueAccent,
+                    onPressed: () => Navigator.push(context, new MaterialPageRoute(
+                      builder: (_) => new MashPage(),
+                      ),
+                    ),
+                  ),
+                ),
+                new Positioned(
+                  top: 70.0,
+                  left: 40.0,
+                  right: 0.0,
+
+                  child: new IconButton(
+
+                    icon: new Icon(const IconData(0xe039, fontFamily: 'MaterialIcons')),
+                    iconSize: 24.0,
+                    color: Colors.grey,
+                    splashColor: Colors.blueAccent,
+                    onPressed: () => Navigator.push(context, new MaterialPageRoute(
+                      builder: (_) => new MashPage(),
+                    ),
+                    ),
+                  ),
+                ),
+                new Positioned(
+                  top: 100.0,
+                  left: 200.0,
+                  right: 0.0,
+
+                  child: new IconButton(
+
+                    icon: new Icon(const IconData(0xe039, fontFamily: 'MaterialIcons')),
+                    iconSize: 24.0,
+                    color: Colors.grey,
+                    splashColor: Colors.blueAccent,
+                    onPressed: () => Navigator.push(context, new MaterialPageRoute(
+                      builder: (_) => new MashPage(),
+                    ),
+                    ),
+                  ),
+                ),
+
+                new Positioned(
+                  top: 130.0,
+                  left: 100.0,
+                  right: 0.0,
+
+                  child: new IconButton(
+
+                    icon: new Icon(const IconData(0xe3b0, fontFamily: 'MaterialIcons')),
+                    iconSize: 24.0,
+                    color: Colors.grey,
+                    splashColor: Colors.blueAccent,
+                    onPressed: () => Navigator.push(context, new MaterialPageRoute(
+                      builder: (_) => new MashPage(),
+                    ),
+                    ),
+                  ),
+                ),
+
+                new Positioned(
+                  top: 120.0,
+                  left: -80.0,
+                  right: 0.0,
+
+                  child: new IconButton(
+
+                    icon: new Icon(const IconData(0xe3b0, fontFamily: 'MaterialIcons')),
+                    iconSize: 24.0,
+                    color: Colors.grey,
+                    splashColor: Colors.blueAccent,
+                    onPressed: () => Navigator.push(context, new MaterialPageRoute(
+                      builder: (_) => new MashPage(),
+                    ),
+                    ),
+                  ),
+                ),
+
+              ]
               ),
-              onTap: showMap,
             ),
 
-            new Row(
-              children: <Widget>[
+
                 new Expanded(
                   child: new ListView(
                       shrinkWrap: true,
@@ -61,53 +170,62 @@ class _MapPageState extends State<MapPage> {
                             avatar: '',
                             author: 'Klaus Kleber',
                             likes: 53,
-                            link: 'images/sarah.jpg'
+                            link: 'images/sarah.jpg',
+                            icon: 0xe3b0,
                         ),
                         new MediaCapture(
                             key: new Key('y'),
                             avatar: '',
                             author: 'Jan Böhmer',
                             likes: 35,
-                            link: 'images/sarah.jpg'
+                            link: 'images/sarah.jpg',
+                            icon: 0xe3b0,
+
                         ),
                         new MediaCapture(
                             key: new Key('z'),
                             avatar: '',
                             author: 'Jan Böhmer',
                             likes: 17,
-                            link: 'images/sarah.jpg'
+                            link: 'images/sarah.jpg',
+                            icon: 0xe3b0,
                         ),
-                        
-
+                        new MediaCapture(
+                            key: new Key('z'),
+                            avatar: '',
+                            author: 'Jan Böhmer',
+                            likes: 17,
+                            link: 'images/sarah.jpg',
+                            icon: 0xe3b0,
+                        ),
 
                       ]
 
                   ),
 
                 ),
-            ]
 
-            ),
           ],
         ));
   }
 
   showMap(){
+    MapView.setApiKey(API_KEY);
     mapView.show(
         new MapOptions(
             mapViewType: MapViewType.normal,
             showUserLocation: true,
             initialCameraPosition: new CameraPosition(
                 new Location(45.523970, -122.663081), 14.0),
-            title: "Florida school shooting"),
+            title: "Olympics Pyoengchang"),
         toolbarActions: [new ToolbarAction("Close", 1)]);
 
     var sub = mapView.onMapReady.listen((_) {
       mapView.setMarkers(<Marker>[
-        new Marker("1", "p1", 45.523970, -122.663081, color: Colors.blue),
-        new Marker("2", "p2", 45.528788, -122.684633),
+        new Marker("1", "p1", 37.370474, 128.399977, color: Colors.blue),
+        new Marker("2", "p2", 37.380474, 128.379977),
       ]);
-      mapView.addMarker(new Marker("3", "p3", 45.5259467, -122.687747,
+      mapView.addMarker(new Marker("3", "p3", 37.370474, 128.389977,
           color: Colors.purple));
 
       mapView.zoomToFit(padding: 100);

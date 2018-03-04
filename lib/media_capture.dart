@@ -3,11 +3,12 @@ import 'mash_page.dart';
 
 
 class MediaCapture extends StatefulWidget {
-  MediaCapture({Key key, this.author, this.likes, this.avatar, this.link}) : super(key:key);
+  MediaCapture({Key key, this.author, this.likes, this.avatar, this.link, this.icon}) : super(key:key);
   final String author;
   final int likes;
   final String avatar;
   final String link;
+  final int icon;
 
 
   @override
@@ -41,7 +42,9 @@ class _MediaCaptureState extends State<MediaCapture>{
               new Expanded(
                 child: new Container(
                   margin: const EdgeInsets.only(left: 16.0),
-                  child: new Text(widget.author),
+                  child: new Text(widget.author,
+                      style: new TextStyle(color: Colors.grey)
+                  ),
                 ),
               ),
 
@@ -55,7 +58,9 @@ class _MediaCaptureState extends State<MediaCapture>{
               ),
               new Container(
                 margin: const EdgeInsets.only(right: 24.0),
-                child: new Text(widget.likes.toString()),
+                child: new Text(widget.likes.toString(),
+                  style: new TextStyle(color: Colors.grey),
+                ),
               ),
 
               new Container(
@@ -64,6 +69,7 @@ class _MediaCaptureState extends State<MediaCapture>{
                   icon: new Icon(const IconData(0xe039, fontFamily: 'MaterialIcons')),
                   iconSize: 48.0,
                   color: Colors.grey,
+                  splashColor: Colors.blueAccent,
                   onPressed: () => Navigator.push(context, new MaterialPageRoute(
                     builder: (_) => new MashPage(),
                 ),
