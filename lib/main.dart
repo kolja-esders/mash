@@ -39,7 +39,6 @@ class _CameraAppState extends State<CameraApp> {
     if (!controller.value.initialized) {
       return new Container();
     }
-    print("xD");
 
     return new Scaffold(
       body: new Column(
