@@ -31,31 +31,37 @@ class _MediaCaptureState extends State<MediaCapture>{
       padding: new EdgeInsets.all(8.0),
       child: new Row(
         children: <Widget>[
-          new Container(
-            child: new CircleAvatar(
-
-              child: new Text(widget.likes.toString()),
+          new Expanded(
+            child: new Row(
+              children: <Widget>[
+              new Container(
+                child: new CircleAvatar(
+                  child: new Text(widget.likes.toString()),
+                ),
+              ),
+              new Container(
+                margin: const EdgeInsets.only(left: 16.0),
+                child: new Text(widget.author),
+              ),
+            ]
             ),
           ),
-          new Container(
-            margin: const EdgeInsets.only(left: 16.0),
-            child: new Text(widget.author),
-          ),
-          new Container(
-            margin: const EdgeInsets.only(right: 6.0),
-            child: new Icon(const IconData(0xe8dc, fontFamily: 'MaterialIcons')),
-          ),
-          new Container(
-            margin: const EdgeInsets.only(right: 16.0),
-            child: new Text(widget.likes.toString()),
-          ),
 
-          new Container(
-            margin: const EdgeInsets.only(right: 8.0),
-            child: new Icon(const IconData(0xe039, fontFamily: 'MaterialIcons')),
+              new Container(
+                margin: const EdgeInsets.only(right: 6.0),
+                child: new Icon(const IconData(0xe8dc, fontFamily: 'MaterialIcons')),
+              ),
+              new Container(
+                margin: const EdgeInsets.only(right: 16.0),
+                child: new Text(widget.likes.toString()),
+              ),
+
+              new Container(
+                margin: const EdgeInsets.only(right: 8.0),
+                child: new Icon(const IconData(0xe039, fontFamily: 'MaterialIcons')),
 
 
-            ),
+                ),
 
 
           /* new Container(
