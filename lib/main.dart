@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'mash_page.dart';
 import 'overview.dart' as overview;
 
 
 void main() => runApp(new MyApp());
-
 
 class MyTabs extends StatefulWidget {
   @override
@@ -13,7 +11,6 @@ class MyTabs extends StatefulWidget {
 }
 
 class MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin {
-
 
   TabController controller;
 
@@ -28,6 +25,7 @@ class MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin {
     controller.dispose();
     super.dispose();
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -60,11 +58,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-        title: 'Flutter Demo',
-        theme: new ThemeData(
-          primarySwatch: Colors.deepOrange,
-        ),
-        home: new MyTabs(),
+      title: 'Flutter Demo',
+      theme: new ThemeData(
+        primarySwatch: Colors.deepOrange,
+      ),
+      home: new MyTabs(),
     );
   }
 }

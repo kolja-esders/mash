@@ -4,13 +4,15 @@ description: News as music videos.
 dependencies:
   flutter:
     sdk: flutter
+
   video_player: ^0.2.1
   share: ^0.3.2
+
   cupertino_icons: ^0.1.0
 
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
+
+  map_view:
+    path: ../flutter_google_map_view/
 
 
 # For information on the generic Dart part of this file, see the
@@ -24,12 +26,14 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
+
   # To add assets to your application, add an assets section, like this:
   assets:
-   - images/hockey.jpg
-   - images/rings.jpg
-   - images/ski.jpg
-   - images/cheer.jpg
+    - images/sarah.jpg
+    - images/hockey.jpg
+    - images/rings.jpg
+    - images/ski.jpg
+    - images/cheer.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
