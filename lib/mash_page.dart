@@ -3,6 +3,7 @@ import 'package:video_player/video_player.dart';
 import 'package:share/share.dart';
 
 import 'package:mash/comment.dart';
+import 'map.dart';
 
 class MashPageState extends State<MashPage> {
   VideoPlayerController _controller;
@@ -161,7 +162,10 @@ class MashPageState extends State<MashPage> {
                                   padding: new EdgeInsets.all(16.0),
                                   child: new IconButton(
                                     icon: new Icon(Icons.more_vert),
-                                    onPressed: () => {},
+                                    onPressed: () => Navigator.push(context, new MaterialPageRoute(
+                                      builder: (_) => new MapPage(),
+                                      ),
+                                    ),
                                     color: Colors.white,
                                   )
                               ),
