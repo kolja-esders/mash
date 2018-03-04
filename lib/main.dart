@@ -41,16 +41,16 @@ class _CameraAppState extends State<CameraApp> {
     }
 
     return new Scaffold(
-      backgroundColor: Colors.deepOrange,
-      body: new AspectRatio(
-        aspectRatio: controller.value.aspectRatio,
-        child: new CameraPreview(controller)),
+      body: new Column(
+        children: <Widget>[
+      new Expanded(
+          child: new CameraPreview(controller)),
+      ]),
       floatingActionButton: new FloatingActionButton(
         onPressed: () => {},
         child: new Icon(Icons.image),
       ),
     );
-
   }
 }
 
