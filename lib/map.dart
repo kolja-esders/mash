@@ -52,109 +52,49 @@ class _MapPageState extends State<MapPage> {
                   onTap: showMap,
                 ),
 
-                new Positioned(
-                  top: 75.0,
-                  left: 0.0,
-                  right: 0.0,
-                  child: new IconButton(
-                    icon: new Icon(const IconData(0xe838, fontFamily: 'MaterialIcons')),
-                    iconSize: 32.0,
-                    color: Colors.deepOrange,
-                    splashColor: Colors.blueAccent,
-                    onPressed: () => Navigator.push(context, new MaterialPageRoute(
-                      builder: (_) => new MashPage(),
-                    ),
-                    ),
-                  ),
-                ),
 
-                new Positioned(
+                new MediaLocation(
                   top: 40.0,
                   left: -150.0,
                   right: 0.0,
-                  child: new IconButton(
-                    icon: new Icon(const IconData(0xe039, fontFamily: 'MaterialIcons')),
-                    iconSize: 24.0,
-                    color: Colors.grey,
-                    splashColor: Colors.blueAccent,
-                    onPressed: () => Navigator.push(context, new MaterialPageRoute(
-                      builder: (_) => new MashPage(),
-                      ),
-                    ),
-                  ),
+                  link: "asd",
+                  color: Colors.grey,
+                  icon: new Icon(Icons.play_circle_outline),
                 ),
-                new Positioned(
-                  top: 70.0,
-                  left: 40.0,
-                  right: 0.0,
-
-                  child: new IconButton(
-
-                    icon: new Icon(const IconData(0xe039, fontFamily: 'MaterialIcons')),
-                    iconSize: 24.0,
-                    color: Colors.grey,
-                    splashColor: Colors.blueAccent,
-                    onPressed: () => Navigator.push(context, new MaterialPageRoute(
-                      builder: (_) => new MashPage(),
-                    ),
-                    ),
-                  ),
-                ),
-                new Positioned(
-                  top: 100.0,
-                  left: 200.0,
-                  right: 0.0,
-
-                  child: new IconButton(
-
-                    icon: new Icon(const IconData(0xe039, fontFamily: 'MaterialIcons')),
-                    iconSize: 24.0,
-                    color: Colors.grey,
-                    splashColor: Colors.blueAccent,
-                    onPressed: () => Navigator.push(context, new MaterialPageRoute(
-                      builder: (_) => new MashPage(),
-                    ),
-                    ),
-                  ),
-                ),
-
-                new Positioned(
-                  top: 130.0,
-                  left: 100.0,
-                  right: 0.0,
-
-                  child: new IconButton(
-
-                    icon: new Icon(const IconData(0xe3b0, fontFamily: 'MaterialIcons')),
-                    iconSize: 24.0,
-                    color: Colors.grey,
-                    splashColor: Colors.blueAccent,
-                    onPressed: () => Navigator.push(context, new MaterialPageRoute(
-                      builder: (_) => new MashPage(),
-                    ),
-                    ),
-                  ),
-                ),
-
-                new Positioned(
+                new MediaLocation(
                   top: 120.0,
                   left: -80.0,
                   right: 0.0,
-
-                  child: new IconButton(
-
-                    icon: new Icon(const IconData(0xe3b0, fontFamily: 'MaterialIcons')),
-                    iconSize: 24.0,
-                    color: Colors.grey,
-                    splashColor: Colors.blueAccent,
-                    onPressed: () => Navigator.push(context, new MaterialPageRoute(
-                      builder: (_) => new MashPage(),
-                    ),
-                    ),
-                  ),
+                  link: "asd",
+                  color: Colors.grey,
+                  icon: new Icon(Icons.camera_alt),
+                ),
+                new MediaLocation(
+                  top: 100.0,
+                  left: 200.0,
+                  right: 0.0,
+                  link: "asd",
+                  color: Colors.grey,
+                  icon: new Icon(Icons.camera_alt),
+                ),
+                new MediaLocation(
+                  top: 130.0,
+                  left: 100.0,
+                  right: 0.0,
+                  link: "asd",
+                  color: Colors.grey,
+                  icon: new Icon(Icons.play_circle_outline),
+                ),
+                new MediaLocation(
+                  top: 70.0,
+                  left: 40.0,
+                  right: 0.0,
+                  link: "asd",
+                  color: Colors.deepOrange,
+                  icon: new Icon(Icons.star),
                 ),
 
-              ]
+                ]
               ),
             ),
 
@@ -162,7 +102,7 @@ class _MapPageState extends State<MapPage> {
                 new Expanded(
                   child: new ListView(
                       shrinkWrap: true,
-                      padding: new EdgeInsets.all(16.0),
+                      padding: new EdgeInsets.all(8.0),
                       children: <Widget>[
 
                         new MediaCapture(

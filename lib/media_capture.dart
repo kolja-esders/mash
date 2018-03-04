@@ -2,6 +2,51 @@ import 'package:flutter/material.dart';
 import 'mash_page.dart';
 
 
+class MediaLocation extends StatefulWidget {
+  MediaLocation({Key key, this.top, this.left, this.right, this.link, this.color, this.icon}) : super(key:key);
+  final double top;
+  final double left;
+  final double right;
+  final String link;
+  final Color color;
+  final Icon icon;
+
+  @override
+  _MediaLocationState createState() => new _MediaLocationState();
+}
+
+
+class _MediaLocationState extends State<MediaLocation> {
+
+  @override
+  initState() {
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return new Positioned(
+      top: widget.top,
+      left: widget.left,
+      right: widget.right,
+      child: new IconButton(
+        icon: widget.icon,
+        iconSize: 32.0,
+        color: widget.color,
+        splashColor: Colors.blueAccent,
+        onPressed: () => Navigator.push(context, new MaterialPageRoute(
+          builder: (_) => new MashPage(),
+        ),
+        ),
+      ),
+    );
+
+  }
+}
+
+
+
+
 class MediaCapture extends StatefulWidget {
   MediaCapture({Key key, this.author, this.likes, this.avatar, this.link, this.icon}) : super(key:key);
   final String author;
@@ -67,7 +112,7 @@ class _MediaCaptureState extends State<MediaCapture>{
                 margin: const EdgeInsets.only(right: 8.0),
                 child: new IconButton(
                   icon: new Icon(const IconData(0xe039, fontFamily: 'MaterialIcons')),
-                  iconSize: 48.0,
+                  iconSize: 32.0,
                   color: Colors.grey,
                   splashColor: Colors.blueAccent,
                   onPressed: () => Navigator.push(context, new MaterialPageRoute(
