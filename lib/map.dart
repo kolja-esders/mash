@@ -4,7 +4,11 @@ import 'package:map_view/map_view.dart';
 import 'media_capture.dart';
 import 'mash_page.dart';
 
+
 var API_KEY = "AIzaSyD0bmHFAcM9cVUZiEPvkjgX0nzc78lKVNA";
+
+
+
 
 
 class MapPage extends StatefulWidget {
@@ -52,109 +56,57 @@ class _MapPageState extends State<MapPage> {
                   onTap: showMap,
                 ),
 
-                new Positioned(
-                  top: 75.0,
-                  left: 0.0,
-                  right: 0.0,
-                  child: new IconButton(
-                    icon: new Icon(const IconData(0xe838, fontFamily: 'MaterialIcons')),
-                    iconSize: 32.0,
-                    color: Colors.deepOrange,
-                    splashColor: Colors.blueAccent,
-                    onPressed: () => Navigator.push(context, new MaterialPageRoute(
-                      builder: (_) => new MashPage(),
-                    ),
-                    ),
-                  ),
-                ),
 
-                new Positioned(
+                new MediaLocation(
                   top: 40.0,
                   left: -150.0,
                   right: 0.0,
-                  child: new IconButton(
-                    icon: new Icon(const IconData(0xe039, fontFamily: 'MaterialIcons')),
-                    iconSize: 24.0,
-                    color: Colors.grey,
-                    splashColor: Colors.blueAccent,
-                    onPressed: () => Navigator.push(context, new MaterialPageRoute(
-                      builder: (_) => new MashPage(),
-                      ),
-                    ),
-                  ),
+                  link: "asd",
+                  color: new Color(0xff26A69A),
+                  icon: new Icon(Icons.play_circle_outline),
                 ),
-                new Positioned(
-                  top: 70.0,
-                  left: 40.0,
-                  right: 0.0,
-
-                  child: new IconButton(
-
-                    icon: new Icon(const IconData(0xe039, fontFamily: 'MaterialIcons')),
-                    iconSize: 24.0,
-                    color: Colors.grey,
-                    splashColor: Colors.blueAccent,
-                    onPressed: () => Navigator.push(context, new MaterialPageRoute(
-                      builder: (_) => new MashPage(),
-                    ),
-                    ),
-                  ),
-                ),
-                new Positioned(
-                  top: 100.0,
-                  left: 200.0,
-                  right: 0.0,
-
-                  child: new IconButton(
-
-                    icon: new Icon(const IconData(0xe039, fontFamily: 'MaterialIcons')),
-                    iconSize: 24.0,
-                    color: Colors.grey,
-                    splashColor: Colors.blueAccent,
-                    onPressed: () => Navigator.push(context, new MaterialPageRoute(
-                      builder: (_) => new MashPage(),
-                    ),
-                    ),
-                  ),
-                ),
-
-                new Positioned(
-                  top: 130.0,
-                  left: 100.0,
-                  right: 0.0,
-
-                  child: new IconButton(
-
-                    icon: new Icon(const IconData(0xe3b0, fontFamily: 'MaterialIcons')),
-                    iconSize: 24.0,
-                    color: Colors.grey,
-                    splashColor: Colors.blueAccent,
-                    onPressed: () => Navigator.push(context, new MaterialPageRoute(
-                      builder: (_) => new MashPage(),
-                    ),
-                    ),
-                  ),
-                ),
-
-                new Positioned(
+                new MediaLocation(
                   top: 120.0,
                   left: -80.0,
                   right: 0.0,
-
-                  child: new IconButton(
-
-                    icon: new Icon(const IconData(0xe3b0, fontFamily: 'MaterialIcons')),
-                    iconSize: 24.0,
-                    color: Colors.grey,
-                    splashColor: Colors.blueAccent,
-                    onPressed: () => Navigator.push(context, new MaterialPageRoute(
-                      builder: (_) => new MashPage(),
-                    ),
-                    ),
-                  ),
+                  link: "asd",
+                  color: new Color(0xff4DB6AC),
+                  icon: new Icon(Icons.camera_alt),
+                ),
+                new MediaLocation(
+                  top: 100.0,
+                  left: 200.0,
+                  right: 0.0,
+                  link: "asd",
+                  color: new Color(0xff80CBC4),
+                  icon: new Icon(Icons.play_circle_outline),
+                ),
+                new MediaLocation(
+                  top: 130.0,
+                  left: 100.0,
+                  right: 0.0,
+                  link: "asd",
+                  color: new Color(0xff80CBC4),
+                  icon: new Icon(Icons.play_circle_outline),
+                ),
+                new MediaLocation(
+                  top: 30.0,
+                  left: 150.0,
+                  right: 0.0,
+                  link: "asd",
+                  color: new Color(0xff80CBC4),
+                  icon: new Icon(Icons.camera_alt),
+                ),
+                new MediaLocation(
+                  top: 70.0,
+                  left: 40.0,
+                  right: 0.0,
+                  link: "asd",
+                  color: Colors.deepOrange,
+                  icon: new Icon(Icons.star),
                 ),
 
-              ]
+                ]
               ),
             ),
 
@@ -162,7 +114,7 @@ class _MapPageState extends State<MapPage> {
                 new Expanded(
                   child: new ListView(
                       shrinkWrap: true,
-                      padding: new EdgeInsets.all(16.0),
+                      padding: new EdgeInsets.all(8.0),
                       children: <Widget>[
 
                         new MediaCapture(
@@ -170,33 +122,47 @@ class _MapPageState extends State<MapPage> {
                             avatar: '',
                             author: 'Klaus Kleber',
                             likes: 53,
-                            link: 'images/sarah.jpg',
-                            icon: 0xe3b0,
+                            link: 'images/profile2.jpg',
+                            icon: new Icon(Icons.play_circle_outline),
+                            color: new Color(0xff26A69A),
                         ),
                         new MediaCapture(
                             key: new Key('y'),
                             avatar: '',
-                            author: 'Jan Böhmer',
+                            author: 'Jessica van Baum',
                             likes: 35,
-                            link: 'images/sarah.jpg',
-                            icon: 0xe3b0,
+                            link: 'images/profile3.jpg',
+                            icon: new Icon(Icons.camera_alt),
+                            color: new Color(0xff4DB6AC),
 
                         ),
                         new MediaCapture(
                             key: new Key('z'),
                             avatar: '',
-                            author: 'Jan Böhmer',
+                            author: 'Piet Stranger',
                             likes: 17,
-                            link: 'images/sarah.jpg',
-                            icon: 0xe3b0,
+                            link: 'images/profile5.jpg',
+                            icon: new Icon(Icons.play_circle_outline),
+                            color: new Color(0xff80CBC4),
                         ),
                         new MediaCapture(
                             key: new Key('z'),
                             avatar: '',
-                            author: 'Jan Böhmer',
+                            author: 'Hannah Depp',
                             likes: 17,
-                            link: 'images/sarah.jpg',
-                            icon: 0xe3b0,
+                            link: 'images/profile4.jpg',
+                            icon: new Icon(Icons.play_circle_outline),
+                            color: new Color(0xff80CBC4),
+                        ),
+
+                        new MediaCapture(
+                          key: new Key('z'),
+                          avatar: '',
+                          author: 'Sarah McConner',
+                          likes: 17,
+                          link: 'images/sarah.jpg',
+                          icon: new Icon(Icons.camera_alt),
+                          color: new Color(0xff80CBC4),
                         ),
 
                       ]
