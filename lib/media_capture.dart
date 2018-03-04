@@ -97,7 +97,7 @@ class _MediaCaptureState extends State<MediaCapture>{
                 ),
                 new CircleAvatar(
                   backgroundImage: new AssetImage(
-                      'images/sarah.jpg'),
+                      widget.link),
                   radius: 23.0,
 
                 )
