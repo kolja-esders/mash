@@ -78,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
       icon: new Icon(Icons.movie),
       elevation: 4.0,
       text: "Create a Mash",
-      tooltip: "Button menu",
+      tooltip: "Button menu1",
     ),
     new FabMiniMenuItem(
       onPressed: () {},
@@ -88,7 +88,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
       icon: new Icon(Icons.insert_photo),
       elevation: 4.0,
       text: "Upload a Clip",
-      tooltip: "Button menu",
+      tooltip: "Button menu2",
     ),
     new FabMiniMenuItem(
       onPressed: () {},
@@ -98,7 +98,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
       icon: new Icon(Icons.camera_alt),
       elevation: 4.0,
       text: "Take a Clip",
-      tooltip: "Button menu",
+      tooltip: "Button menu3",
     ),
   ];
 
@@ -126,8 +126,8 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           ),
         ],
       ),
-      //floatingActionButton: new FabDialer(
-      //    _fabMiniMenuItemList, Colors.deepOrange, new Icon(Icons.add)),
+      floatingActionButton: new FabDialer(
+          _fabMiniMenuItemList, Colors.deepOrange, new Icon(Icons.add)),
     );
   }
 
