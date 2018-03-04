@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'mash_page.dart';
+import 'profile_page.dart';
 
 void main() => runApp(new MyApp());
 
@@ -35,6 +36,14 @@ class MyApp extends StatelessWidget {
                 builder: (_) => new MashPage(),
               settings: settings
             );
+          case 'profile':
+            return new MaterialPageRoute(
+                builder: (_) => new ProfilePage(
+                    name: 'Sarah Engels',
+                    avatar: ''
+                ),
+                settings: settings
+            );
         }
       }
     );
@@ -65,6 +74,10 @@ class _MyHomePageState extends State<MyHomePage> {
             new FlatButton(
                 onPressed: () => Navigator.pushNamed(context, '/mash'),
                 child: new Text('Open mash')
+            ),
+            new FlatButton(
+                onPressed: () => Navigator.pushNamed(context, '/profile'),
+                child: new Text('Open profile')
             ),
           ],
         ),
