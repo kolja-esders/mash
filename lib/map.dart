@@ -129,7 +129,7 @@ class _MapPageState extends State<MapPage> {
                         new MediaCapture(
                             key: new Key('y'),
                             avatar: '',
-                            author: 'Jan Böhmer',
+                            author: 'Jessica van Baum',
                             likes: 35,
                             link: 'images/profile3.jpg',
                             icon: new Icon(Icons.camera_alt),
@@ -139,7 +139,7 @@ class _MapPageState extends State<MapPage> {
                         new MediaCapture(
                             key: new Key('z'),
                             avatar: '',
-                            author: 'Jan Böhmer',
+                            author: 'Piet Stranger',
                             likes: 17,
                             link: 'images/profile5.jpg',
                             icon: new Icon(Icons.play_circle_outline),
@@ -148,7 +148,7 @@ class _MapPageState extends State<MapPage> {
                         new MediaCapture(
                             key: new Key('z'),
                             avatar: '',
-                            author: 'Jan Böhmer',
+                            author: 'Hannah Depp',
                             likes: 17,
                             link: 'images/profile4.jpg',
                             icon: new Icon(Icons.play_circle_outline),
@@ -158,7 +158,7 @@ class _MapPageState extends State<MapPage> {
                         new MediaCapture(
                           key: new Key('z'),
                           avatar: '',
-                          author: 'Jan Böhmer',
+                          author: 'Sarah McConner',
                           likes: 17,
                           link: 'images/sarah.jpg',
                           icon: new Icon(Icons.camera_alt),

@@ -12,7 +12,7 @@ dependencies:
 
 
   map_view:
-    path: res/flutter_google_map_view
+    path: ../flutter_google_map_view
 
 
 # For information on the generic Dart part of this file, see the
