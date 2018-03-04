@@ -42,16 +42,16 @@ class _MediaCaptureState extends State<MediaCapture>{
             child: new Text(widget.author),
           ),
           new Container(
-            margin: const EdgeInsets.only(left: 32.0),
+            margin: const EdgeInsets.only(right: 6.0),
             child: new Icon(const IconData(0xe8dc, fontFamily: 'MaterialIcons')),
           ),
           new Container(
-            margin: const EdgeInsets.only(left: 6.0),
+            margin: const EdgeInsets.only(right: 16.0),
             child: new Text(widget.likes.toString()),
           ),
 
           new Container(
-            margin: const EdgeInsets.only(left: 32.0),
+            margin: const EdgeInsets.only(right: 8.0),
             child: new Icon(const IconData(0xe039, fontFamily: 'MaterialIcons')),
 
 

@@ -58,15 +58,15 @@ class _MapPageState extends State<MapPage> {
 
                         new MediaCapture(
                             key: new Key('x'),
-                            avatar: 'x',
+                            avatar: '',
                             author: 'Klaus Kleber',
                             likes: 10,
                             link: 'tba'
                         ),
                         new MediaCapture(
                             key: new Key('y'),
-                            avatar: 'y',
-                            author: 'Jahn Böhmer',
+                            avatar: '',
+                            author: 'Jan Böhmer',
                             likes: 10,
                             link: 'tba'
                         ),
