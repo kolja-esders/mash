@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
             );
           case 'mash':
             return new MaterialPageRoute(
-                builder: (_) => new MediaCapture(),
+                builder: (_) => new MashPage(),
               settings: settings
             );
           case 'map':
