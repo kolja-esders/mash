@@ -41,15 +41,16 @@ class _MapPageState extends State<MapPage> {
 
           children: <Widget>[
 
-            new InkWell(
-              child: new Center(
-                child: new Image.network(staticMapUri.toString()),
+            new Container(
+              child: new InkWell(
+                child: new Center(
+                  child: new Image.network(staticMapUri.toString()),
+                ),
+                onTap: showMap,
               ),
-              onTap: showMap,
             ),
 
-            new Row(
-              children: <Widget>[
+
                 new Expanded(
                   child: new ListView(
                       shrinkWrap: true,
@@ -77,17 +78,13 @@ class _MapPageState extends State<MapPage> {
                             likes: 17,
                             link: 'images/sarah.jpg'
                         ),
-                        
-
 
                       ]
 
                   ),
 
                 ),
-            ]
 
-            ),
           ],
         ));
   }
