@@ -65,7 +65,7 @@ class ProfilePageState extends State<ProfilePage> {
                   new Container(
                       margin: new EdgeInsets.only(top: 16.0),
                       child: new Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             new Text(
                                 widget.name,
@@ -74,8 +74,8 @@ class ProfilePageState extends State<ProfilePage> {
                                 )
                             ),
                             new Icon(
-                              Icons.verified_user,
-                              color: Colors.blueAccent
+                                Icons.verified_user,
+                                color: Colors.blueAccent
                             )
                           ])
                   ),
@@ -107,9 +107,85 @@ class ProfilePageState extends State<ProfilePage> {
                         ),
                       ],
                     ),
-
+                  ),
+                  new Container(
+                    alignment: Alignment.centerLeft,
+                    padding: new EdgeInsets.all(16.0),
+                    child: new Text('hello world')
+                  ),
+                  new Expanded(
+                      child:
+                      new Container(
+                        child:
+                        new GridView.count(
+                            crossAxisCount: 2,
+                            childAspectRatio: 1.0,
+                            padding: const EdgeInsets.all(4.0),
+                            mainAxisSpacing: 4.0,
+                            crossAxisSpacing: 4.0,
+                            children: <String>[
+                              'https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Lac_Peyto_%284%29.jpg/330px-Lac_Peyto_%284%29.jpg',
+                              'https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Lac_Peyto_%284%29.jpg/330px-Lac_Peyto_%284%29.jpg',
+                              'https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Lac_Peyto_%284%29.jpg/330px-Lac_Peyto_%284%29.jpg',
+                              'https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Lac_Peyto_%284%29.jpg/330px-Lac_Peyto_%284%29.jpg',
+                              'https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Lac_Peyto_%284%29.jpg/330px-Lac_Peyto_%284%29.jpg',
+                              'https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Lac_Peyto_%284%29.jpg/330px-Lac_Peyto_%284%29.jpg',
+                              'https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Lac_Peyto_%284%29.jpg/330px-Lac_Peyto_%284%29.jpg',
+                              'https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Lac_Peyto_%284%29.jpg/330px-Lac_Peyto_%284%29.jpg',
+                              'https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Lac_Peyto_%284%29.jpg/330px-Lac_Peyto_%284%29.jpg',
+                              'https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Lac_Peyto_%284%29.jpg/330px-Lac_Peyto_%284%29.jpg',
+                            ].map((String url) {
+                              return new GridTile(
+                                  child: new Container(
+                                    height: 100.0,
+                                    child: new Image.network(
+                                        url,
+                                        fit: BoxFit.cover
+                                    ),
+                                  ),
+                                  footer: new Material(
+                                      color: Colors.black54,
+                                      child: new Container(
+                                          padding: new EdgeInsets.all(16.0),
+                                          child: new Row(
+                                            children: <Widget>[
+                                              new Expanded(
+                                                child: new Column(
+                                                  crossAxisAlignment: CrossAxisAlignment
+                                                      .start,
+                                                  children: <Widget>[
+                                                    new Text(
+                                                      'Awesome test',
+                                                      style: new TextStyle(
+                                                          fontWeight: FontWeight
+                                                              .w500,
+                                                          fontSize: 16.0,
+                                                          color: Colors.white
+                                                      ),
+                                                    ),
+                                                    new Text(
+                                                      'Subtitle',
+                                                      style: new TextStyle(
+                                                        color: Colors.white70,
+                                                        fontSize: 12.0,
+                                                      ),
+                                                    )
+                                                  ],
+                                                ),
+                                              ),
+                                              new Icon(
+                                                Icons.favorite_border,
+                                                color: Colors.white,)
+                                            ],
+                                          )
+                                      )
+                                  )
+                              );
+                            }).toList()),
+                      )
                   )
                 ]
+
             )
 
         )
