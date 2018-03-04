@@ -28,13 +28,10 @@ class MashPageState extends State<MashPage> {
       ..initialize();
   }
 
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-
-
         body: new Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
@@ -229,10 +226,8 @@ class MashPageState extends State<MashPage> {
                           ),
                           new Expanded(
                               child: new Container(
-                                  decoration: new BoxDecoration(
-                                      color: Colors.white
-                                  ),
                                   child: new TextField(
+                                    keyboardType: TextInputType.text,
                                     autocorrect: false,
                                     decoration: new InputDecoration(
                                       border: InputBorder.none,
@@ -252,7 +247,6 @@ class MashPageState extends State<MashPage> {
     );
   }
 }
-
 
 class MashPage extends StatefulWidget {
   MashPage({Key key, this.title, this.author}) : super(key: key);
