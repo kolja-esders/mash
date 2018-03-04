@@ -31,47 +31,51 @@ class _MediaCaptureState extends State<MediaCapture>{
       padding: new EdgeInsets.all(8.0),
       child: new Row(
         children: <Widget>[
-          new Expanded(
-            child: new Row(
-              children: <Widget>[
+
               new Container(
                 child: new CircleAvatar(
-                  child: new Text(widget.likes.toString()),
+                    backgroundImage: new AssetImage(widget.link),
+                    radius: 24.0,
                 ),
               ),
-              new Container(
-                margin: const EdgeInsets.only(left: 16.0),
-                child: new Text(widget.author),
+              new Expanded(
+                child: new Container(
+                  margin: const EdgeInsets.only(left: 16.0),
+                  child: new Text(widget.author),
+                ),
               ),
-            ]
-            ),
-          ),
+
 
               new Container(
                 margin: const EdgeInsets.only(right: 6.0),
-                child: new Icon(const IconData(0xe8dc, fontFamily: 'MaterialIcons')),
+                child: new Icon(
+                  const IconData(0xe8dc, fontFamily: 'MaterialIcons'),
+                  color: Colors.grey),
+
               ),
               new Container(
-                margin: const EdgeInsets.only(right: 16.0),
+                margin: const EdgeInsets.only(right: 24.0),
                 child: new Text(widget.likes.toString()),
               ),
 
               new Container(
                 margin: const EdgeInsets.only(right: 8.0),
-                child: new Icon(const IconData(0xe039, fontFamily: 'MaterialIcons')),
-
+                child: new IconButton(
+                  icon: new Icon(const IconData(0xe039, fontFamily: 'MaterialIcons')),
+                  iconSize: 48.0,
+                  color: Colors.grey,
+                  onPressed: () => Navigator.push(context, new MaterialPageRoute(
+                    builder: (_) => new MashPage(),
+                ),
+                ),
+                ),
 
                 ),
 
 
           /* new Container(
             margin: const EdgeInsets.only(left: 6.0),
-            child: new IconButton(
-              icon: new Icon(const IconData(0xe039, fontFamily: 'MaterialIcons')),
-              onPressed: () => Navigator.push(context, new MaterialPageRoute(
-                builder: (_) => new MashPage(),
-              ),
-              ),
+
             ),
           ),
           */
