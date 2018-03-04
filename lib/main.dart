@@ -39,12 +39,9 @@ class _CameraAppState extends State<CameraApp> {
     if (!controller.value.initialized) {
       return new Container();
     }
-    print("xD");
 
     return new Scaffold(
-      appBar: new AppBar(
-        title: new Text("test"),
-      ),
+      backgroundColor: Colors.deepOrange,
       body: new AspectRatio(
         aspectRatio: controller.value.aspectRatio,
         child: new CameraPreview(controller)),
