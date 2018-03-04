@@ -1,9 +1,64 @@
 import 'package:flutter/material.dart';
 
 import 'overview.dart' as overview;
+import 'profile_page.dart' as profile;
+
+import 'dart:async';
+import 'package:camera/camera.dart';
+
+List<CameraDescription> cameras;
+
+class CameraApp extends StatefulWidget {
+  @override
+  _CameraAppState createState() => new _CameraAppState();
+}
+
+class _CameraAppState extends State<CameraApp> {
+  CameraController controller;
+
+  @override
+  void initState() {
+    super.initState();
+    controller = new CameraController(cameras[0], ResolutionPreset.medium);
+    controller.initialize().then((_) {
+      if (!mounted) {
+        return;
+      }
+      setState(() {});
+    });
+  }
+
+  @override
+  void dispose() {
+    controller?.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (!controller.value.initialized) {
+      return new Container();
+    }
+
+    return new Scaffold(
+      backgroundColor: Colors.deepOrange,
+      body: new AspectRatio(
+        aspectRatio: controller.value.aspectRatio,
+        child: new CameraPreview(controller)),
+      floatingActionButton: new FloatingActionButton(
+        onPressed: () => {},
+        child: new Icon(Icons.image),
+      ),
+    );
+
+  }
+}
 
 
-void main() => runApp(new MyApp());
+Future<Null> main() async {
+  cameras = await availableCameras();
+  runApp(new MyApp());
+}
 
 class MyTabs extends StatefulWidget {
   @override
@@ -30,7 +85,6 @@ class MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-
         bottomNavigationBar: new Material(
             color: Colors.deepOrange,
             child: new TabBar(
@@ -45,9 +99,12 @@ class MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin {
         body: new TabBarView(
             controller: controller,
             children: <Widget>[
+              new CameraApp(),
               new overview.MyApp(),
-              new overview.MyApp(),
-              new overview.MyApp(),
+              new profile.ProfilePage(
+                name: "Kolja Esder",
+                avatar: "images/sarah.jpg",
+              ),
             ]
         )
     );
