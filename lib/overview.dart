@@ -14,30 +14,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.deepOrange,
         ),
         home: new MyHomePage(title: 'Flutter'),
-        onGenerateRoute: (RouteSettings settings) {
-          var path = settings.name.substring(1).split('/');
-          print(path);
 
-          var arg = '';
-          if (path.length > 1) {
-            arg = path[1];
-          }
-
-          print(arg);
-
-          switch (path[0]) {
-            case '':
-              return new MaterialPageRoute(
-                  builder: (_) => new MyHomePage(title: 'Flutter'),
-                  settings: settings
-              );
-            case 'mash':
-              return new MaterialPageRoute(
-                  builder: (_) => new MashPage(),
-                  settings: settings
-              );
-          }
-        }
     );
   }
 }
@@ -54,11 +31,19 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 
   final _images = [
-    "images/hockey.jpg",
-    "images/rings.jpg",
-    "images/ski.jpg",
-    "images/cheer.jpg"
+    "images/cheer.jpg",
+    "images/trump.jpeg",
+    "images/bieber.jpg",
+    "images/ski.jpg"
   ];
+
+  final _titles = [
+    "Olympic Winter Games 2018",
+    "Trump + Xi = <3 ?",
+    "Planed Attack on Justin Bieber",
+    "Norway skis it's way to Olympic Crone"
+  ];
+
 
   @override
   Widget build(BuildContext context) {
@@ -97,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           new Stack(
             children: <Widget>[
               new AspectRatio(
-                  aspectRatio: 20 / 9,
+                  aspectRatio: 16 / 9,
                   child: new Stack(
                     children: <Widget>[
                       new Container(
@@ -117,6 +102,25 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                               colors: <Color>[
                                 Colors.transparent,
                                 const Color.fromARGB(200, 0, 0, 0),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      new Positioned(
+                        bottom: 0.0,
+                        left: 0.0,
+                        right: 0.0,
+                        child: new Container(
+                          height: 72.0,
+                          width: double.INFINITY,
+                          decoration: new BoxDecoration(
+                            gradient: new LinearGradient(
+                              begin: Alignment.bottomCenter,
+                              end: Alignment.topCenter,
+                              colors: <Color>[
+                                const Color.fromARGB(200, 0, 0, 0),
+                                Colors.transparent
                               ],
                             ),
                           ),
@@ -148,13 +152,13 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                                       new Text(
                                         "watch",
                                         style: new TextStyle(
-                                            color: Colors.white30,
+                                            color: Colors.white70,
                                             decoration: TextDecoration.underline
                                         ),
                                         textAlign: TextAlign.left,
                                       ),
                                       new Text(
-                                        "Olympics - Day 1",
+                                        _titles[i],
                                         style: new TextStyle(
                                             color: Colors.white,
                                             fontSize: 18.0
