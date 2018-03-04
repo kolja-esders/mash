@@ -1,62 +1,20 @@
 import 'package:flutter/material.dart';
-
-import 'overview.dart' as overview;
-import 'profile_page.dart' as profile;
-
 import 'dart:async';
 import 'package:camera/camera.dart';
 
-List<CameraDescription> cameras;
+import 'package:mash/mash_page.dart' as mash;
 
-class CameraApp extends StatefulWidget {
-  @override
-  _CameraAppState createState() => new _CameraAppState();
-}
+import 'overview.dart' as overview;
+import 'profile_page.dart' as profile;
+import 'camera_page.dart' as camera;
 
-class _CameraAppState extends State<CameraApp> {
-  CameraController controller;
 
-  @override
-  void initState() {
-    super.initState();
-    controller = new CameraController(cameras[0], ResolutionPreset.medium);
-    controller.initialize().then((_) {
-      if (!mounted) {
-        return;
-      }
-      setState(() {});
-    });
-  }
-
-  @override
-  void dispose() {
-    controller?.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    if (!controller.value.initialized) {
-      return new Container();
-    }
-
-    return new Scaffold(
-      body: new Column(
-        children: <Widget>[
-      new Expanded(
-          child: new CameraPreview(controller)),
-      ]),
-      floatingActionButton: new FloatingActionButton(
-        onPressed: () => {},
-        child: new Icon(Icons.image),
-      ),
-    );
-  }
-}
-
+List<CameraDescription> cams = [];
 
 Future<Null> main() async {
-  cameras = await availableCameras();
+  if(cams.length == 0) {
+    cams = await availableCameras();
+  }
   runApp(new MyApp());
 }
 
@@ -99,8 +57,8 @@ class MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin {
         body: new TabBarView(
             controller: controller,
             children: <Widget>[
-              new CameraApp(),
-              new overview.MyApp(),
+              new camera.CameraApp(cameras: cams,),
+              new overview.MyHomePage(title: "Flutter",),
               new profile.ProfilePage(
                 name: "Kolja Esder",
                 avatar: "images/sarah.jpg",
@@ -120,6 +78,30 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.deepOrange,
       ),
       home: new MyTabs(),
+      onGenerateRoute: (RouteSettings settings) {
+          var path = settings.name.substring(1).split('/');
+          print(path);
+
+          var arg = '';
+          if (path.length > 1) {
+            arg = path[1];
+          }
+
+          print(arg);
+
+          switch (path[0]) {
+            case '':
+              return new MaterialPageRoute(
+                  builder: (_) => new overview.MyHomePage(title: 'Flutter'),
+                  settings: settings
+              );
+            case 'mash':
+              return new MaterialPageRoute(
+                  builder: (_) => new mash.MashPage(),
+                  settings: settings
+              );
+          }
+        }
     );
   }
 }
