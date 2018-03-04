@@ -7,7 +7,6 @@ dependencies:
   video_player: ^0.2.1
   share: ^0.3.2
   cupertino_icons: ^0.1.0
-  flutter_fab_dialer: ^0.0.2
 
 dev_dependencies:
   flutter_test:
