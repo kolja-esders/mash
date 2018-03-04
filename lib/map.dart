@@ -60,16 +60,25 @@ class _MapPageState extends State<MapPage> {
                             key: new Key('x'),
                             avatar: '',
                             author: 'Klaus Kleber',
-                            likes: 10,
-                            link: 'tba'
+                            likes: 53,
+                            link: 'images/sarah.jpg'
                         ),
                         new MediaCapture(
                             key: new Key('y'),
                             avatar: '',
                             author: 'Jan Böhmer',
-                            likes: 10,
-                            link: 'tba'
+                            likes: 35,
+                            link: 'images/sarah.jpg'
                         ),
+                        new MediaCapture(
+                            key: new Key('z'),
+                            avatar: '',
+                            author: 'Jan Böhmer',
+                            likes: 17,
+                            link: 'images/sarah.jpg'
+                        ),
+                        
+
 
                       ]
 
