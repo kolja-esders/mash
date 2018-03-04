@@ -4,7 +4,11 @@ import 'package:map_view/map_view.dart';
 import 'media_capture.dart';
 import 'mash_page.dart';
 
+
 var API_KEY = "AIzaSyD0bmHFAcM9cVUZiEPvkjgX0nzc78lKVNA";
+
+
+
 
 
 class MapPage extends StatefulWidget {
@@ -58,7 +62,7 @@ class _MapPageState extends State<MapPage> {
                   left: -150.0,
                   right: 0.0,
                   link: "asd",
-                  color: Colors.grey,
+                  color: new Color(0xff26A69A),
                   icon: new Icon(Icons.play_circle_outline),
                 ),
                 new MediaLocation(
@@ -66,7 +70,7 @@ class _MapPageState extends State<MapPage> {
                   left: -80.0,
                   right: 0.0,
                   link: "asd",
-                  color: Colors.grey,
+                  color: new Color(0xff4DB6AC),
                   icon: new Icon(Icons.camera_alt),
                 ),
                 new MediaLocation(
@@ -74,15 +78,15 @@ class _MapPageState extends State<MapPage> {
                   left: 200.0,
                   right: 0.0,
                   link: "asd",
-                  color: Colors.grey,
-                  icon: new Icon(Icons.camera_alt),
+                  color: new Color(0xff80CBC4),
+                  icon: new Icon(Icons.play_circle_outline),
                 ),
                 new MediaLocation(
                   top: 130.0,
                   left: 100.0,
                   right: 0.0,
                   link: "asd",
-                  color: Colors.grey,
+                  color: new Color(0xffB2DFDB),
                   icon: new Icon(Icons.play_circle_outline),
                 ),
                 new MediaLocation(
@@ -111,7 +115,8 @@ class _MapPageState extends State<MapPage> {
                             author: 'Klaus Kleber',
                             likes: 53,
                             link: 'images/sarah.jpg',
-                            icon: 0xe3b0,
+                            icon: new Icon(Icons.play_circle_outline),
+                            color: new Color(0xff26A69A),
                         ),
                         new MediaCapture(
                             key: new Key('y'),
@@ -119,7 +124,8 @@ class _MapPageState extends State<MapPage> {
                             author: 'Jan Böhmer',
                             likes: 35,
                             link: 'images/sarah.jpg',
-                            icon: 0xe3b0,
+                            icon: new Icon(Icons.camera_alt),
+                            color: new Color(0xff4DB6AC),
 
                         ),
                         new MediaCapture(
@@ -128,7 +134,8 @@ class _MapPageState extends State<MapPage> {
                             author: 'Jan Böhmer',
                             likes: 17,
                             link: 'images/sarah.jpg',
-                            icon: 0xe3b0,
+                            icon: new Icon(Icons.play_circle_outline),
+                            color: new Color(0xff80CBC4),
                         ),
                         new MediaCapture(
                             key: new Key('z'),
@@ -136,7 +143,8 @@ class _MapPageState extends State<MapPage> {
                             author: 'Jan Böhmer',
                             likes: 17,
                             link: 'images/sarah.jpg',
-                            icon: 0xe3b0,
+                            icon: new Icon(Icons.play_circle_outline),
+                            color: new Color(0xffB2DFDB),
                         ),
 
                       ]

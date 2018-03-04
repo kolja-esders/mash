@@ -29,15 +29,17 @@ class _MediaLocationState extends State<MediaLocation> {
       top: widget.top,
       left: widget.left,
       right: widget.right,
-      child: new IconButton(
-        icon: widget.icon,
-        iconSize: 32.0,
-        color: widget.color,
-        splashColor: Colors.blueAccent,
-        onPressed: () => Navigator.push(context, new MaterialPageRoute(
-          builder: (_) => new MashPage(),
-        ),
-        ),
+      child: new Material(
+        color: Colors.transparent,
+        child: new IconButton(
+          icon: widget.icon,
+          iconSize: 32.0,
+          color: widget.color,
+          onPressed: () => Navigator.push(context, new MaterialPageRoute(
+            builder: (_) => new MashPage(),
+          ),
+          ),
+      ),
       ),
     );
 
@@ -48,12 +50,13 @@ class _MediaLocationState extends State<MediaLocation> {
 
 
 class MediaCapture extends StatefulWidget {
-  MediaCapture({Key key, this.author, this.likes, this.avatar, this.link, this.icon}) : super(key:key);
+  MediaCapture({Key key, this.author, this.likes, this.avatar, this.link, this.icon, this.color}) : super(key:key);
   final String author;
   final int likes;
   final String avatar;
   final String link;
-  final int icon;
+  final Icon icon;
+  final Color color;
 
 
   @override
@@ -78,12 +81,30 @@ class _MediaCaptureState extends State<MediaCapture>{
       child: new Row(
         children: <Widget>[
 
-              new Container(
-                child: new CircleAvatar(
-                    backgroundImage: new AssetImage(widget.link),
-                    radius: 24.0,
+
+
+          new Stack(
+          alignment: Alignment.center,
+              children: <Widget>[
+                new Container(
+                  height: 52.0,
+                  width: 52.0,
+                  child: new Material(
+                    borderRadius: new BorderRadius.all(
+                        new Radius.circular(26.0)),
+                    color: widget.color,
+                  ),
                 ),
-              ),
+                new CircleAvatar(
+                  backgroundImage: new AssetImage(
+                      'images/sarah.jpg'),
+                  radius: 23.0,
+
+                )
+
+              ]),
+
+
               new Expanded(
                 child: new Container(
                   margin: const EdgeInsets.only(left: 16.0),
@@ -92,14 +113,11 @@ class _MediaCaptureState extends State<MediaCapture>{
                   ),
                 ),
               ),
-
-
               new Container(
                 margin: const EdgeInsets.only(right: 6.0),
                 child: new Icon(
                   const IconData(0xe8dc, fontFamily: 'MaterialIcons'),
                   color: Colors.grey),
-
               ),
               new Container(
                 margin: const EdgeInsets.only(right: 24.0),
@@ -107,88 +125,26 @@ class _MediaCaptureState extends State<MediaCapture>{
                   style: new TextStyle(color: Colors.grey),
                 ),
               ),
-
               new Container(
                 margin: const EdgeInsets.only(right: 8.0),
-                child: new IconButton(
-                  icon: new Icon(const IconData(0xe039, fontFamily: 'MaterialIcons')),
-                  iconSize: 32.0,
-                  color: Colors.grey,
-                  splashColor: Colors.blueAccent,
-                  onPressed: () => Navigator.push(context, new MaterialPageRoute(
-                    builder: (_) => new MashPage(),
+                child: new Material(
+                  child: new IconButton(
+                    icon: widget.icon,
+                    iconSize: 32.0,
+                    color: Colors.grey,
+                    splashColor: Colors.blueAccent,
+                    onPressed: () => Navigator.push(context, new MaterialPageRoute(
+                      builder: (_) => new MashPage(),
+                    ),
+                  ),
                 ),
                 ),
                 ),
 
-                ),
-
-
-          /* new Container(
-            margin: const EdgeInsets.only(left: 6.0),
-
-            ),
-          ),
-          */
-    ]
+      ]
       )
     );
 
         }
- /*
-      )
-      body: new ListView.builder(
-        itemBuilder: (BuildContext context, int index) => new EntryItem(data[index]),
-        itemCount: data.length,
-      ),
-    );
-*/
 
 }
-
-
-
-
-
-
-
-
-/*
-// One entry in the multilevel list displayed by this app.
-class Entry {
-  Entry(this.title, this.number_of_likes);
-  final String title;
-  final int number_of_likes;
-
-
-}
-
-// The entire multilevel list displayed by this app.
-final List<Entry> data = <Entry>[
-  new Entry('Klaus Kleber', 50),
-  new Entry('Jan Böhmer', 23),
-  new Entry('Marc Bator', 13),
-
-];
-
-// Displays one Entry. If the entry has children then it's displayed
-// with an ExpansionTile.
-class EntryItem extends StatelessWidget {
-  const EntryItem(this.entry);
-
-  final Entry entry;
-
-  Widget _buildTiles(Entry root) {
-
-      return new Container(
-          title: new Text(root.title),
-          likes: new Text(root.number_of_likes.toString()));
-
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return _buildTiles(entry);
-  }
-}
-*/
