@@ -38,47 +38,47 @@ class _MapPageState extends State<MapPage> {
         body: new Column(
 
           mainAxisAlignment: MainAxisAlignment.start,
+
           children: <Widget>[
-            new Container(
-              height: 250.0,
 
-                child: new Stack(
-
-                children: <Widget>[
-
-
-                  new InkWell(
-                    child: new Center(
-                      child: new Image.network(staticMapUri.toString()),
-                    ),
-                    onTap: showMap,
-                  ),
-                  new Row(
-                    children: <Widget>[
-                      new Expanded(
-                        child: new ListView(
-                            padding: new EdgeInsets.all(16.0),
-                            children: <Widget>[
-                              new MediaCapture(
-                                  key: new Key('x'),
-                                  avatar: 'x',
-                                  author: 'Klaus Kleber',
-                                  likes: 10,
-                                  link: 'tba'
-                              ),
-                            ]
-
-                        ),
-
-                      ),
-                    ]
-
-                  ),
-
-                ],
+            new InkWell(
+              child: new Center(
+                child: new Image.network(staticMapUri.toString()),
               ),
+              onTap: showMap,
             ),
 
+            new Row(
+              children: <Widget>[
+                new Expanded(
+                  child: new ListView(
+                      shrinkWrap: true,
+                      padding: new EdgeInsets.all(16.0),
+                      children: <Widget>[
+
+                        new MediaCapture(
+                            key: new Key('x'),
+                            avatar: 'x',
+                            author: 'Klaus Kleber',
+                            likes: 10,
+                            link: 'tba'
+                        ),
+                        new MediaCapture(
+                            key: new Key('y'),
+                            avatar: 'y',
+                            author: 'Jahn Böhmer',
+                            likes: 10,
+                            link: 'tba'
+                        ),
+
+                      ]
+
+                  ),
+
+                ),
+            ]
+
+            ),
           ],
         ));
   }
