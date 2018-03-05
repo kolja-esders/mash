@@ -44,7 +44,7 @@ class MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return new Scaffold(
         bottomNavigationBar: new Material(
-            color: Colors.deepOrange,
+            color: Colors.blue,
             child: new TabBar(
                 controller: controller,
                 tabs: <Tab>[
@@ -58,9 +58,9 @@ class MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin {
             controller: controller,
             children: <Widget>[
               new camera.CameraApp(cameras: cams,),
-              new overview.MyHomePage(title: "Flutter",),
+              new overview.MyHomePage(title: "Mash",),
               new profile.ProfilePage(
-                name: "Kolja Esder",
+                name: "Sarah Engels",
                 avatar: "images/sarah.jpg",
               ),
             ]
@@ -75,7 +75,7 @@ class MyApp extends StatelessWidget {
     return new MaterialApp(
       title: 'Flutter Demo',
       theme: new ThemeData(
-        primarySwatch: Colors.deepOrange,
+        primarySwatch: Colors.blue,
       ),
       home: new MyTabs(),
       onGenerateRoute: (RouteSettings settings) {

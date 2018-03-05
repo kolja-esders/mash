@@ -16,7 +16,7 @@ class MashPageState extends State<MashPage> {
   void initState() {
     super.initState();
     _controller = new VideoPlayerController(
-      'http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_20mb.mp4',
+      'https://github.com/kolja-esders/mash/blob/master/videos/faked.mp4?raw=true',
     )
       ..addListener(() {
         final bool isPlaying = _controller.value.isPlaying;
@@ -177,7 +177,7 @@ class MashPageState extends State<MashPage> {
                         padding: new EdgeInsets.all(16.0),
                         width: double.INFINITY,
                         child: new Text(
-                          'Happy bunnies',
+                          'Olympic Winter Games 2018',
                           style: new TextStyle(
                               fontSize: 24.0
                           ),

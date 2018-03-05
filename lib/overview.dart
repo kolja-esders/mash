@@ -66,8 +66,8 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
       ),
       floatingActionButton: new FloatingActionButton(
         onPressed: () => { },
-        tooltip: 'Increment',
-        child: new Icon(Icons.movie),
+        tooltip: 'Add mash',
+        child: new Icon(Icons.add),
       ),
     );
   }
